@@ -18,6 +18,7 @@ export default {
           600: "#9C6F2E",
         },
         verdigris: {
+          300: "#7BBEA7",
           400: "#5FA88F",
           500: "#3E8770",
         },
