@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-parchment font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brass-500/30 text-parchment;
+  }
+  *:focus-visible {
+    outline: 2px solid theme("colors.brass.400");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-ink-800/60 border border-ink-600/60 backdrop-blur-sm rounded-xl;
+  }
+
+  .seal-divider {
+    @apply relative h-px w-full bg-gradient-to-r from-transparent via-brass-500/50 to-transparent;
+  }
+
+  .tx-hash {
+    @apply font-mono text-xs text-verdigris-400 hover:text-verdigris-300 transition-colors truncate;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brass-500 px-5 py-2.5
+      font-sans font-medium text-ink-950 transition-all
+      hover:bg-brass-400 active:scale-[0.98]
+      disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-ink-600
+      bg-ink-800/50 px-5 py-2.5 font-sans font-medium text-parchment transition-all
+      hover:border-brass-500/50 hover:bg-ink-700/50 active:scale-[0.98]
+      disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-ink-600 bg-ink-900/80 px-4 py-2.5 text-parchment
+      placeholder:text-parchment/30 outline-none transition-colors
+      focus:border-brass-500/60;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium font-mono uppercase tracking-wide;
+  }
+}
+
+@keyframes seal-stamp {
+  0% {
+    transform: scale(1.4) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.95) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+.animate-seal-stamp {
+  animation: seal-stamp 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-seal-stamp {
+    animation: none;
+  }
+}

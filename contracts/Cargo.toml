@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["worksafe_escrow_contract"]
+
+[workspace.package]
+edition = "2021"
