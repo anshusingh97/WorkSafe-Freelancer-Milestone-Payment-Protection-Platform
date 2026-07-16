@@ -6,7 +6,7 @@
 - **Live Platform**: [work-safe-freelancer-milestone-paym.vercel.app](https://work-safe-freelancer-milestone-paym.vercel.app/)
 - **Demo Video**: [Watch the Demo](https://drive.google.com/file/d/1cfUWayfgTHE9_ifiz2Q5i7tF0RyxOME1/view?usp=sharing)
 - **Contract Deployment Address**: `CAUEWAQAAARNEWO6GPEY6PUH3XVFJG47IVXY7MEAFTYLTYVVMJSUVWEZ`
-- **User Feedback Form**: [CertifyChain Feedback Form](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
+- **User Feedback Form**: [WorkSafe Feedback Form](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
 - **User Feedback Responses**: [View Responses Sheet Link](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
 
 ---
@@ -92,11 +92,13 @@ Below is the list of users who actively tested the platform and provided feedbac
 
 Improve your product based on the collected feedback and include an Improvement Summary in the README with the corresponding Git commit links.
 
-| User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
-|---|---|---|---|---|---|---|
-| 1 | [PROVIDE NAME] | [PROVIDE EMAIL] | [PROVIDE WALLET] | [PROVIDE FEEDBACK] | [PROVIDE IMPROVEMENT] | [PROVIDE COMMIT ID] |
-| ... | ... | ... | ... | ... | ... | ... |
-*(Please fill in the rest of the feedback implementation here)*
+| User ID | Feedback / Requested Feature | Implemented Feature Details | Git Commit ID Link |
+|---|---|---|---|
+| 4 | allow downloading receipts for the completed milestones | Added "Print receipt" functionality for released milestones | [9ddf946](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/9ddf946) |
+| 8 | A quick chat support feature would be helpful | Added "Support" contact email link directly in Navbar and mobile menu | [0499f0c](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/0499f0c) |
+| 11 | More detailed tooltips explaining complex blockchain terms | Added hover tooltips explaining what each blockchain state means (e.g., Escrowed, Submitted) | [715c4e5](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/715c4e5) |
+| 12 | provide a detailed FAQ section for beginners | Added an FAQ section explaining the smart contract flow on the landing page | [c8424dd](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/c8424dd) |
+| 13 | Enable exporting reports to PDF or CSV formats | Added "Export CSV" feature to the Dashboard to download project status reports | [8712016](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/8712016) |
 
 ## Proof of On-chain Transactions
 
