@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Plus, Wallet, ArrowUpRight, Briefcase, Coins } from "lucide-react";
+import { Plus, Wallet, ArrowUpRight, Briefcase, Coins, Download } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { api, apiErrorMessage } from "../services/api";
 import { ProjectStatusBadge } from "../components/StatusBadge";
@@ -31,6 +31,20 @@ export function Dashboard() {
     completed: projects.filter((p) => p.status === "completed").length,
     open: projects.filter((p) => p.status === "open").length,
   };
+
+  function exportToCsv() {
+    if (!projects.length) return;
+    const header = "Title,Status,Budget,Category\n";
+    const rows = projects.map(p => `"${p.title.replace(/"/g, '""')}","${p.status}",${p.budget},"${p.category}"`).join("\n");
+    const csvContent = "data:text/csv;charset=utf-8," + header + rows;
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "projects_report.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-12">
@@ -77,9 +91,14 @@ export function Dashboard() {
 
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-sans font-semibold text-lg">Your projects</h2>
-        <Link to="/projects" className="text-sm text-brass-400 hover:text-brass-300">
-          Browse all projects →
-        </Link>
+        <div className="flex gap-4 items-center">
+          <button onClick={exportToCsv} className="text-sm text-parchment/70 hover:text-parchment flex items-center gap-1">
+            <Download size={14} /> Export CSV
+          </button>
+          <Link to="/projects" className="text-sm text-brass-400 hover:text-brass-300">
+            Browse all projects →
+          </Link>
+        </div>
       </div>
 
       {loading ? (
