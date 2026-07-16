@@ -5,7 +5,7 @@ import { ApiError } from "../middleware/errorHandler";
 
 // Stellar public keys (G...) are 56 chars, base32.
 const walletSchema = z.object({
-  walletAddress: z.string().regex(/^G[A-Z2-7]{55}$/, "Not a valid Stellar public key").or(z.literal("")),
+  walletAddress: z.string().regex(/^G[A-Z2-7]{55}$|^$/, "Not a valid Stellar public key"),
 });
 
 export async function updateWallet(req: Request, res: Response) {
