@@ -50,6 +50,12 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a
+            href="mailto:support@worksafe.app"
+            className="text-sm text-parchment/70 hover:text-parchment transition-colors"
+          >
+            Support
+          </a>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
@@ -112,6 +118,9 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a href="mailto:support@worksafe.app" onClick={() => setOpen(false)} className="text-parchment/80">
+            Support
+          </a>
           <div className="seal-divider" />
           {user ? (
             <>
