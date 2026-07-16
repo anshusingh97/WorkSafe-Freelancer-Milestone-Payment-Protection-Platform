@@ -11,7 +11,7 @@
 //!                              \-> Disputed -> Released | Refunded
 //!
 use soroban_sdk::{
-    contract, contracterror, contractevent, contractimpl, contracttype, token, Address, Env,
+    contract, contracterror, contractimpl, contracttype, symbol_short, token, Address, Env,
 };
 
 // ---------------------------------------------------------------------------
@@ -56,62 +56,6 @@ pub enum Error {
     Unauthorized = 4,
     InvalidAmount = 5,
     NotInitialized = 6,
-}
-
-// ---------------------------------------------------------------------------
-// Events
-// ---------------------------------------------------------------------------
-
-#[contractevent]
-pub struct MilestoneCreated {
-    #[topic]
-    pub milestone_id: u64,
-    pub client: Address,
-    pub freelancer: Address,
-    pub amount: i128,
-}
-
-#[contractevent]
-pub struct MilestoneFunded {
-    #[topic]
-    pub milestone_id: u64,
-    pub amount: i128,
-}
-
-#[contractevent]
-pub struct WorkSubmitted {
-    #[topic]
-    pub milestone_id: u64,
-}
-
-#[contractevent]
-pub struct MilestoneReleased {
-    #[topic]
-    pub milestone_id: u64,
-    pub to: Address,
-    pub amount: i128,
-}
-
-#[contractevent]
-pub struct DisputeRaised {
-    #[topic]
-    pub milestone_id: u64,
-    pub raised_by: Address,
-}
-
-#[contractevent]
-pub struct DisputeResolved {
-    #[topic]
-    pub milestone_id: u64,
-    pub release_to_freelancer: bool,
-}
-
-#[contractevent]
-pub struct MilestoneRefunded {
-    #[topic]
-    pub milestone_id: u64,
-    pub to: Address,
-    pub amount: i128,
 }
 
 // ---------------------------------------------------------------------------
@@ -167,13 +111,10 @@ impl WorkSafeEscrowContract {
         env.storage().persistent().set(&key, &milestone);
         env.storage().persistent().extend_ttl(&key, 100_000, 500_000);
 
-        MilestoneCreated {
-            milestone_id,
-            client,
-            freelancer,
-            amount,
-        }
-        .publish(&env);
+        env.events().publish(
+            (symbol_short!("Created"), milestone_id),
+            (client, freelancer, amount),
+        );
 
         Ok(())
     }
@@ -204,11 +145,10 @@ impl WorkSafeEscrowContract {
         milestone.status = MilestoneStatus::Funded;
         env.storage().persistent().set(&key, &milestone);
 
-        MilestoneFunded {
-            milestone_id,
-            amount: milestone.amount,
-        }
-        .publish(&env);
+        env.events().publish(
+            (symbol_short!("Funded"), milestone_id),
+            milestone.amount,
+        );
 
         Ok(())
     }
@@ -231,7 +171,10 @@ impl WorkSafeEscrowContract {
         milestone.status = MilestoneStatus::Submitted;
         env.storage().persistent().set(&key, &milestone);
 
-        WorkSubmitted { milestone_id }.publish(&env);
+        env.events().publish(
+            (symbol_short!("Submit"), milestone_id),
+            (),
+        );
         Ok(())
     }
 
@@ -261,12 +204,10 @@ impl WorkSafeEscrowContract {
         milestone.status = MilestoneStatus::Released;
         env.storage().persistent().set(&key, &milestone);
 
-        MilestoneReleased {
-            milestone_id,
-            to: milestone.freelancer,
-            amount: milestone.amount,
-        }
-        .publish(&env);
+        env.events().publish(
+            (symbol_short!("Released"), milestone_id),
+            (milestone.freelancer.clone(), milestone.amount),
+        );
 
         Ok(())
     }
@@ -296,11 +237,10 @@ impl WorkSafeEscrowContract {
         milestone.status = MilestoneStatus::Disputed;
         env.storage().persistent().set(&key, &milestone);
 
-        DisputeRaised {
-            milestone_id,
+        env.events().publish(
+            (symbol_short!("Dispute"), milestone_id),
             raised_by,
-        }
-        .publish(&env);
+        );
 
         Ok(())
     }
@@ -345,11 +285,10 @@ impl WorkSafeEscrowContract {
         };
         env.storage().persistent().set(&key, &milestone);
 
-        DisputeResolved {
-            milestone_id,
+        env.events().publish(
+            (symbol_short!("Resolved"), milestone_id),
             release_to_freelancer,
-        }
-        .publish(&env);
+        );
 
         Ok(())
     }
