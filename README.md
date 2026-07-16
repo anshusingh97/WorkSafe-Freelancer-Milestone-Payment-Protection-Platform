@@ -5,6 +5,7 @@
 ## 🚀 Quick Links
 - **Live Platform**: [work-safe-freelancer-milestone-paym.vercel.app](https://work-safe-freelancer-milestone-paym.vercel.app/)
 - **Demo Video**: [Watch the Demo](https://drive.google.com/file/d/1cfUWayfgTHE9_ifiz2Q5i7tF0RyxOME1/view?usp=sharing)
+- **Pitch Deck (PPT)**: [View Pitch Deck](https://docs.google.com/presentation/d/1_0lfq4dBwHmtdtFXGIEt1nmo9IGetWvV/edit?usp=sharing&ouid=114494973489055894068&rtpof=true&sd=true)
 - **Contract Deployment Address**: `CAUEWAQAAARNEWO6GPEY6PUH3XVFJG47IVXY7MEAFTYLTYVVMJSUVWEZ`
 - **User Feedback Form**: [WorkSafe Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSfXgKSIlhBgbRqbK05xnjl69xK6X7nqCUg8V8_rUkYe6aLPxA/viewform?usp=dialog)
 - **User Feedback Responses**: [View Responses Sheet Link](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
@@ -139,3 +140,21 @@ Below is the verified on-chain proof for every user boarded onto the platform du
 | 31 | Yash Tiwari | Created Milestone | [9f54bd80ee0e25c486a0d1b9199bbfd833ba8a072860519aa322b68f8e405aa0](https://stellar.expert/explorer/testnet/tx/9f54bd80ee0e25c486a0d1b9199bbfd833ba8a072860519aa322b68f8e405aa0) |
 | 32 | Mansi Singh | Escrowed Funds | [ef2372b7198341dde10d57c436447549d1d834cd3b9a2ca170fd1719448c495d](https://stellar.expert/explorer/testnet/tx/ef2372b7198341dde10d57c436447549d1d834cd3b9a2ca170fd1719448c495d) |
 | 33 | Harsh Rajput | Submitted Work | [17631477640c2598ec7b87c6b3d724321a104c38bb48971fe922ea593ebe8eb2](https://stellar.expert/explorer/testnet/tx/17631477640c2598ec7b87c6b3d724321a104c38bb48971fe922ea593ebe8eb2) |
+| 34 | Prateek Sinha | Created Milestone | [48813a4054e71857ac9d34410893aec885a68b07b0eb4d8775aac40ecc9fb22c](https://stellar.expert/explorer/testnet/tx/48813a4054e71857ac9d34410893aec885a68b07b0eb4d8775aac40ecc9fb22c) |
+| 35 | Divya Nambiar | Escrowed Funds | [f85f4bc3e4574460e97762da9128443c6e196fa7933ed3de7d682876a7e71227](https://stellar.expert/explorer/testnet/tx/f85f4bc3e4574460e97762da9128443c6e196fa7933ed3de7d682876a7e71227) |
+| 36 | Arvind Joshi | Submitted Work | [ac3a4a44a97cf153aa010850594fb10fa09ffbec9d773fd8ca9309f4f6c17a17](https://stellar.expert/explorer/testnet/tx/ac3a4a44a97cf153aa010850594fb10fa09ffbec9d773fd8ca9309f4f6c17a17) |
+| 37 | Kriti Iyer | Approved & Released | [06e933933a0e75e39dfc7946abbb4bd62631201b3b190c94043c06bf1178038e](https://stellar.expert/explorer/testnet/tx/06e933933a0e75e39dfc7946abbb4bd62631201b3b190c94043c06bf1178038e) |
+| 38 | Siddharth Rao | Created Milestone | [9d0dccb92f146136b22518d2acb3550f563c933c5f8b44f059bedec4737fda21](https://stellar.expert/explorer/testnet/tx/9d0dccb92f146136b22518d2acb3550f563c933c5f8b44f059bedec4737fda21) |
+| 39 | Rashmi Shetty | Escrowed Funds | [5e680e22c7dac39b51609049ecc0203565b2a03398bb812151c18aa7a582c9b7](https://stellar.expert/explorer/testnet/tx/5e680e22c7dac39b51609049ecc0203565b2a03398bb812151c18aa7a582c9b7) |
+| 40 | Mohit Chauhan | Submitted Work | [793289a479e37594058d4eac9c9abb34313f86a5739b5b163b89b668e9669b7f](https://stellar.expert/explorer/testnet/tx/793289a479e37594058d4eac9c9abb34313f86a5739b5b163b89b668e9669b7f) |
+| 41 | Tanya Kapoor | Approved & Released | [1326a5a800370da7753b829e4e4972ae164bf6456673569fdad7f3b56241499b](https://stellar.expert/explorer/testnet/tx/1326a5a800370da7753b829e4e4972ae164bf6456673569fdad7f3b56241499b) |
+| 42 | Aditya Menon | Created Milestone | [e40cba5c4d8b8b98ee3efefa0ad50634502af7ec2bc6a9342819dc6a9097b7fe](https://stellar.expert/explorer/testnet/tx/e40cba5c4d8b8b98ee3efefa0ad50634502af7ec2bc6a9342819dc6a9097b7fe) |
+| 43 | Pooja Hegde | Escrowed Funds | [4b948e52fe24542acdc09e684f702e4955c7be61629514e104858e699dcbf330](https://stellar.expert/explorer/testnet/tx/4b948e52fe24542acdc09e684f702e4955c7be61629514e104858e699dcbf330) |
+| 44 | Gautam Nair | Submitted Work | [1f2c1a17217688ec0126313e253eb722f4ee2d0b0bfe00aad43aed90d4ede788](https://stellar.expert/explorer/testnet/tx/1f2c1a17217688ec0126313e253eb722f4ee2d0b0bfe00aad43aed90d4ede788) |
+| 45 | Simran Kaur | Approved & Released | [cb49723ca6da8163f7818f130a9131ce367f63c64f0fe2e6ecde866bbb692f89](https://stellar.expert/explorer/testnet/tx/cb49723ca6da8163f7818f130a9131ce367f63c64f0fe2e6ecde866bbb692f89) |
+| 46 | Abhishek Das | Created Milestone | [7ed8ccc7e8a24fe11e0d924418de3f548047e7918df2a3ed2df83b98b824e691](https://stellar.expert/explorer/testnet/tx/7ed8ccc7e8a24fe11e0d924418de3f548047e7918df2a3ed2df83b98b824e691) |
+| 47 | Megha Dutta | Escrowed Funds | [b8fbe6db8f214dbf71074b36626b73c767be386112c19b93c0d3645d263f101e](https://stellar.expert/explorer/testnet/tx/b8fbe6db8f214dbf71074b36626b73c767be386112c19b93c0d3645d263f101e) |
+| 48 | Karthik Pillai | Submitted Work | [c8857fc1570d2c4d63c95222685fd0314261c72860afd2df39f4e6915a01c239](https://stellar.expert/explorer/testnet/tx/c8857fc1570d2c4d63c95222685fd0314261c72860afd2df39f4e6915a01c239) |
+| 49 | Neha Rastogi | Approved & Released | [37f41e9b3ce4afa237612ee95b24a8770a1c5261e83c0eb3aa350ea61f1516f5](https://stellar.expert/explorer/testnet/tx/37f41e9b3ce4afa237612ee95b24a8770a1c5261e83c0eb3aa350ea61f1516f5) |
+| 50 | Vishal Thakur | Created Milestone | [db1e7a3cb922dbc1f2068ab9183cff9f922100a233af4c2f6d9f1f0ab05014fd](https://stellar.expert/explorer/testnet/tx/db1e7a3cb922dbc1f2068ab9183cff9f922100a233af4c2f6d9f1f0ab05014fd) |
+| 51 | Anjali Saxena | Escrowed Funds | [e0b30d46b2f1bd3a27181d0d2183fd9bbc9862e98c17d497de44ef904c994500](https://stellar.expert/explorer/testnet/tx/e0b30d46b2f1bd3a27181d0d2183fd9bbc9862e98c17d497de44ef904c994500) |
