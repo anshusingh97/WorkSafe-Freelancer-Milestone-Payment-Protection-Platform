@@ -8,7 +8,7 @@
 - **Pitch Deck (PPT)**: [View Pitch Deck](https://docs.google.com/presentation/d/1_0lfq4dBwHmtdtFXGIEt1nmo9IGetWvV/edit?usp=sharing&ouid=114494973489055894068&rtpof=true&sd=true)
 - **Contract Deployment Address**: `CAUEWAQAAARNEWO6GPEY6PUH3XVFJG47IVXY7MEAFTYLTYVVMJSUVWEZ`
 - **User Feedback Form**: [WorkSafe Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSfXgKSIlhBgbRqbK05xnjl69xK6X7nqCUg8V8_rUkYe6aLPxA/viewform?usp=dialog)
-- **User Feedback Responses**: [View Responses Sheet Link](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
+- **User Feedback Responses**: [View Responses Sheet Link](https://docs.google.com/spreadsheets/d/1cOY1sDlBwSv1eHLUXuWEHUjpXHv67iT9Pl7JyEiMeTs/edit?usp=sharing)
 
 ---
 
