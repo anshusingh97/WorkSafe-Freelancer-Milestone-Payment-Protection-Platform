@@ -1,38 +1,27 @@
-#!/usr/bin/env bash
-# Build and deploy the WorkSafe escrow contract to Stellar Testnet.
-# Requires: rustup target add wasm32-unknown-unknown, and the `stellar` CLI
-# (https://developers.stellar.org/docs/tools/developer-tools/cli/install-cli).
-set -euo pipefail
+#!/bin/bash
+set -e
 
-CONTRACT_DIR="worksafe_escrow_contract"
-NETWORK="testnet"
-SOURCE_ACCOUNT="${1:-worksafe-admin}"
+echo "==> Building contracts..."
+# The script is in the contracts directory, so we don't need to cd contracts
+cargo build --target wasm32-unknown-unknown --release
+stellar contract optimize --wasm target/wasm32-unknown-unknown/release/worksafe_escrow_contract.wasm
 
-echo "==> Building contract"
-cd "$CONTRACT_DIR"
-stellar contract build
+# Ensure deployer keys exist
+if ! stellar keys ls | grep -q "deployer"; then
+    echo "Generating deployer keys..."
+    stellar keys generate deployer --network testnet
+    stellar keys fund deployer --network testnet
+fi
 
-WASM_PATH="target/wasm32-unknown-unknown/release/worksafe_escrow_contract.wasm"
+DEPLOYER="deployer"
 
-echo "==> Optimizing wasm"
-stellar contract optimize --wasm "$WASM_PATH"
+echo "==> Deploying WorkSafe Escrow Contract..."
+CONTRACT_ID=$(stellar contract deploy --wasm target/wasm32-unknown-unknown/release/worksafe_escrow_contract.optimized.wasm --source $DEPLOYER --network testnet)
+echo "Contract deployed at: $CONTRACT_ID"
 
-OPTIMIZED_WASM="target/wasm32-unknown-unknown/release/worksafe_escrow_contract.optimized.wasm"
-
-echo "==> Deploying to $NETWORK"
-CONTRACT_ID=$(stellar contract deploy \
-  --wasm "$OPTIMIZED_WASM" \
-  --source "$SOURCE_ACCOUNT" \
-  --network "$NETWORK")
-
-echo "==> Deployed contract ID: $CONTRACT_ID"
-echo "Save this as ESCROW_CONTRACT_ID in backend/.env"
-
-echo "==> Initializing contract with admin"
-stellar contract invoke \
-  --id "$CONTRACT_ID" \
-  --source "$SOURCE_ACCOUNT" \
-  --network "$NETWORK" \
-  -- initialize --admin "$(stellar keys address "$SOURCE_ACCOUNT")"
-
-echo "==> Done. Contract initialized and ready."
+echo ""
+echo "=================================================="
+echo " Deployment complete"
+echo "=================================================="
+echo " CONTRACT_ID: $CONTRACT_ID"
+echo "=================================================="
