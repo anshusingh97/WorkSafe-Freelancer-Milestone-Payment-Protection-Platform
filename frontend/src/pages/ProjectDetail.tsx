@@ -8,6 +8,12 @@ import { track } from "../services/analytics";
 import { MilestoneTimeline } from "../components/MilestoneTimeline";
 import { MilestoneStatusBadge, ProjectStatusBadge } from "../components/StatusBadge";
 import type { Milestone, Project, User } from "../types";
+import {
+  invokeCreateMilestone,
+  invokeFundMilestone,
+  invokeSubmitWork,
+  invokeApproveAndRelease,
+} from "../services/soroban";
 
 const STELLAR_EXPERT_TX = "https://stellar.expert/explorer/testnet/tx/";
 
@@ -112,6 +118,8 @@ export function ProjectDetail() {
         <MilestoneForm
           projectId={project._id}
           existingCount={milestones.length}
+          clientWallet={client?.walletAddress}
+          freelancerWallet={freelancer?.walletAddress}
           onCreated={() => {
             setShowMilestoneForm(false);
             load();
@@ -143,10 +151,14 @@ export function ProjectDetail() {
 function MilestoneForm({
   projectId,
   existingCount,
+  clientWallet,
+  freelancerWallet,
   onCreated,
 }: {
   projectId: string;
   existingCount: number;
+  clientWallet?: string | null;
+  freelancerWallet?: string | null;
   onCreated: () => void;
 }) {
   const [title, setTitle] = useState("");
@@ -157,22 +169,33 @@ function MilestoneForm({
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!clientWallet || !freelancerWallet) {
+      toast.error("Both Client and Freelancer must have connected wallets to create a milestone");
+      return;
+    }
     setLoading(true);
     try {
+      const contractMilestoneId = Date.now() + existingCount;
+      
+      // 1. Invoke Soroban create_milestone
+      await invokeCreateMilestone(
+        contractMilestoneId,
+        clientWallet,
+        freelancerWallet,
+        Number(amount)
+      );
+
+      // 2. Save to backend
       await api.post("/milestones", {
         projectId,
         title,
         description,
         amount: Number(amount),
         dueDate: dueDate ? new Date(dueDate).toISOString() : undefined,
-        // In production this comes back from the Soroban `create_milestone`
-        // call (see freighter.ts + contract service); a monotonically
-        // increasing id keyed off existing milestone count is a reasonable
-        // placeholder for a fresh project.
-        contractMilestoneId: Date.now() + existingCount,
+        contractMilestoneId,
       });
       track("milestone_created", { projectId });
-      toast.success("Milestone added");
+      toast.success("Milestone added to blockchain");
       onCreated();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not create milestone"));
@@ -244,14 +267,10 @@ function MilestoneCard({
     }
     setBusy(true);
     try {
-      // In production: build a Soroban `fund_milestone` invocation, sign it
-      // with Freighter (services/freighter.ts:signTransaction), submit to
-      // Horizon, then send the resulting tx hash here. Simulated below so
-      // the milestone flow is fully testable without a live contract.
-      const simulatedTxHash = `${Date.now().toString(16)}sim`;
-      await api.patch(`/milestones/${milestone._id}/fund`, { escrowTxHash: simulatedTxHash });
+      const txHash = await invokeFundMilestone(milestone.contractMilestoneId);
+      await api.patch(`/milestones/${milestone._id}/fund`, { escrowTxHash: txHash });
       track("milestone_funded", { milestoneId: milestone._id });
-      toast.success("Milestone funded — escrow is locked");
+      toast.success("Milestone funded — escrow is locked on-chain");
       onUpdate();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not fund milestone"));
@@ -267,9 +286,10 @@ function MilestoneCard({
     }
     setBusy(true);
     try {
+      await invokeSubmitWork(milestone.contractMilestoneId);
       await api.patch(`/milestones/${milestone._id}/submit`, { submissionUrl });
       track("work_submitted", { milestoneId: milestone._id });
-      toast.success("Work submitted for review");
+      toast.success("Work submitted for review on-chain");
       setShowSubmitForm(false);
       onUpdate();
     } catch (err) {
@@ -282,10 +302,10 @@ function MilestoneCard({
   async function approve() {
     setBusy(true);
     try {
-      const simulatedTxHash = `${Date.now().toString(16)}release`;
-      await api.patch(`/milestones/${milestone._id}/approve`, { releaseTxHash: simulatedTxHash });
+      const txHash = await invokeApproveAndRelease(milestone.contractMilestoneId);
+      await api.patch(`/milestones/${milestone._id}/approve`, { releaseTxHash: txHash });
       track("payment_released", { milestoneId: milestone._id });
-      toast.success("Payment released to freelancer");
+      toast.success("Payment released to freelancer on-chain");
       onUpdate();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not approve milestone"));
