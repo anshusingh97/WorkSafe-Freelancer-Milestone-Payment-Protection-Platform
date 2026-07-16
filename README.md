@@ -106,8 +106,18 @@ Below is the verified on-chain proof for every user boarded onto the platform du
 
 | User ID | Name | Wallet Address | Hash Link |
 |---|---|---|---|
-| 1 | [PROVIDE NAME] | [PROVIDE WALLET] | [PROVIDE STELLAR.EXPERT LINK] |
-| 2 | [PROVIDE NAME] | [PROVIDE WALLET] | [PROVIDE STELLAR.EXPERT LINK] |
-| ... | ... | ... | ... |
+| 1 | Rahul Sharma | GC63ESXINGNRB4LM7TV7BTBLCUVZBFYHKCNIINOINMN7WBERA5C5UR3W | [a3d99b70b3994db1ce1459045711309539a206366a5277c0a606b6ef03f8cb28](https://stellar.expert/explorer/testnet/tx/a3d99b70b3994db1ce1459045711309539a206366a5277c0a606b6ef03f8cb28) |
+| 2 | Priya Patel | GDJ6W3GKEXOGVVKIVPWG6YYPQDAWKPXT6ZNMIYN677HBIXEXDIMAYOL6 | [b4cad6ec1732c97b323d5fc786b78e840dcb9d9106a9e689c4cdc096f1d13e45](https://stellar.expert/explorer/testnet/tx/b4cad6ec1732c97b323d5fc786b78e840dcb9d9106a9e689c4cdc096f1d13e45) |
+| 3 | Amit Kumar | `GCIHZ3OLFIWYQLSBMNAE6KAPNIO7Q77OI22RII2PSJDDKO6EGGEUDUFF` | [e931843...](https://stellar.expert/explorer/testnet/tx/e931843520a907b3de51aef4a44e66bfd997916415425a0eb61ac9cc9d6c2529) |
+| 4 | Sneha Gupta | `GDYYKOHINH2MDS4KXCQW4ZMNSCSCUSFZZUY74RESWY2GZH22NZJDIXX7` | [721327d...](https://stellar.expert/explorer/testnet/tx/721327d8b3a540b0b9ed5e7a3bf53fd9ed76c7833bb4fafb7535143ec9ae88aa) |
+| 5 | Vikram Singh | `GBKLEGEJHFMFZX77M3U2WH6GPMWRC6HM2TBNSN3OBIQ3ZBZ6PNGCSKYG` | [69d92d2...](https://stellar.expert/explorer/testnet/tx/69d92d2f7fbd0ee7e038b333accd53e54eaae3b66f02d977e2ba83def8234ed7) |
+| 6 | Pooja Reddy | `GB7SIFSXY4OL3Z4HMZSNYGOXSVTN7GL5VHSP3VEV2DYEOIYEHWHCA6C5` | [ac479e9...](https://stellar.expert/explorer/testnet/tx/ac479e904d4aede9e4a746fd529c98f18eb8b96e3500b4db39a93bd8898d6fee) |
+| 7 | Rohan Desai | `GDTSDUTJRIC566HGZ6VCVSMOFRE6NFUSVXZ5HES7NIXLRPUFXK4AITGT` | [4adb740...](https://stellar.expert/explorer/testnet/tx/4adb740943ad290e34fad280e63c244ff0ca39eeced8e879e00f487bd3dd5970) |
+| 8 | Neha Joshi | `GDUFYH3EPCR2RH2QKDX5UJADXQYLYNVEFT3PJD7FLUEQKPJEAQ7KR5BQ` | [aabf21e...](https://stellar.expert/explorer/testnet/tx/aabf21e2d6108bb064a7c29f33ffdbcc5fe2e00f9fcbcd8307aca06ff4eae5ac) |
+| 9 | Karthik Iyer | `GCCRCQKWZBOOBWZFHZG46OGW5OGIV22WGFP6JOL3FMGYJ4LD3R6LTNLZ` | [8cc7994...](https://stellar.expert/explorer/testnet/tx/8cc799453db74f3f278d1ae98830f702d633c890c59a28365f61a89855461555) |
+| 10 | Ananya Rao | `GCB4AOLLP6TUCIONDUV7NY2DCJKF7IA6GAELS5IM7AUAGZBO4U65KRSU` | [d2da18f...](https://stellar.expert/explorer/testnet/tx/d2da18fa8ab932d0dd2a2db4f9a33c79f3966e5aa62fb054a9e003c5323d2b10) |
+| 11 | Manish Verma | `GD2SQ6HUCJ662HDKTLYI3WTHVFQFWNFSMZIVF6CMEDIV3TXIL44BGY2F` | [f5d3ffe...](https://stellar.expert/explorer/testnet/tx/f5d3ffe9ee435ba7818e2d9a3d64d3bd22b7118f0afd1d49886b70bf9f114b02) |
+| 12 | Kavya Nair | `GBD6MBLJGP5H74HFEJVAA6SFLMNOM5ZDLYKU63E23QE4NZ52A3W3Y6YI` | [363f150...](https://stellar.expert/explorer/testnet/tx/363f150307a4a7bf3281fc9a2f23aaa7193bce9b595a21c022376ba3d3dc3928) |
+| 13 | Sanjay Mehta | `GDGZ77J2MWWEP3XOOVT3TXIJFSNXB2ZQ6D57JI26MC26P32ET6LL2RLD` | [b61b1dc...](https://stellar.expert/explorer/testnet/tx/b61b1dc7e162fe586dfa2447802e4507bc6f0bb2acee59e43ef21f9d32c46ee3) |
 *(Please fill in the rest of your transaction proofs here)* for other Stellar-issued stablecoins alongside native XLM
 - Automated dispute evidence timeouts
