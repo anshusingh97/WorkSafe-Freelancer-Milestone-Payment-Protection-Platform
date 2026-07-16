@@ -32,5 +32,8 @@ export function apiErrorMessage(err: unknown, fallback = "Something went wrong")
   if (axios.isAxiosError(err)) {
     return err.response?.data?.error || err.message || fallback;
   }
+  if (err instanceof Error) {
+    return err.message || fallback;
+  }
   return fallback;
 }
