@@ -422,6 +422,11 @@ function MilestoneCard({
             Raise a dispute
           </button>
         )}
+        {(isClient || isFreelancer) && milestone.status === "released" && (
+          <button onClick={() => window.print()} className="btn-secondary text-sm !py-1.5 ml-auto">
+            Print receipt
+          </button>
+        )}
       </div>
     </div>
   );
