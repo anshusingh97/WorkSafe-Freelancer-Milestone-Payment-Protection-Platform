@@ -287,13 +287,24 @@ function MilestoneCard({
     setBusy(true);
     try {
       await invokeSubmitWork(milestone.contractMilestoneId);
+    } catch (err: any) {
+      const errMsg = err?.message || JSON.stringify(err);
+      if (errMsg.includes("Error(Contract, #3)")) {
+        console.log("Milestone already submitted on-chain, proceeding to update backend...");
+      } else {
+        toast.error(apiErrorMessage(err, "Could not submit work"));
+        setBusy(false);
+        return;
+      }
+    }
+
+    try {
       await api.patch(`/milestones/${milestone._id}/submit`, { submissionUrl });
       track("work_submitted", { milestoneId: milestone._id });
       toast.success("Work submitted for review on-chain");
       setShowSubmitForm(false);
       onUpdate();
     } catch (err: any) {
-      alert(`DEBUG: ${err?.message || JSON.stringify(err)}`);
       toast.error(apiErrorMessage(err, "Could not submit work"));
     } finally {
       setBusy(false);
