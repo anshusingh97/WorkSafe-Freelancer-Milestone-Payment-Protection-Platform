@@ -6,7 +6,7 @@
 - **Live Platform**: [work-safe-freelancer-milestone-paym.vercel.app](https://work-safe-freelancer-milestone-paym.vercel.app/)
 - **Demo Video**: [Watch the Demo](https://drive.google.com/file/d/1cfUWayfgTHE9_ifiz2Q5i7tF0RyxOME1/view?usp=sharing)
 - **Contract Deployment Address**: `CAUEWAQAAARNEWO6GPEY6PUH3XVFJG47IVXY7MEAFTYLTYVVMJSUVWEZ`
-- **User Feedback Form**: [WorkSafe Feedback Form](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
+- **User Feedback Form**: [WorkSafe Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSfXgKSIlhBgbRqbK05xnjl69xK6X7nqCUg8V8_rUkYe6aLPxA/viewform?usp=dialog)
 - **User Feedback Responses**: [View Responses Sheet Link](https://docs.google.com/spreadsheets/d/1m7qIWKjULQe42cSpk-F3LA_tXe88xcycNcDu_InlnsU/edit?usp=sharing)
 
 ---
