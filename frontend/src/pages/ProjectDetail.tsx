@@ -195,7 +195,7 @@ function MilestoneForm({
         contractMilestoneId,
       });
       track("milestone_created", { projectId });
-      toast.success("Milestone added to blockchain");
+      toast.success("Milestone added to blockchain", { icon: '⛓️' });
       onCreated();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not create milestone"));
@@ -270,7 +270,7 @@ function MilestoneCard({
       const txHash = await invokeFundMilestone(milestone.contractMilestoneId);
       await api.patch(`/milestones/${milestone._id}/fund`, { escrowTxHash: txHash });
       track("milestone_funded", { milestoneId: milestone._id });
-      toast.success("Milestone funded — escrow is locked on-chain");
+      toast.success("Milestone funded — escrow is locked on-chain", { icon: '💸' });
       onUpdate();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not fund milestone"));
@@ -301,7 +301,7 @@ function MilestoneCard({
     try {
       await api.patch(`/milestones/${milestone._id}/submit`, { submissionUrl });
       track("work_submitted", { milestoneId: milestone._id });
-      toast.success("Work submitted for review on-chain");
+      toast.success("Work submitted for review on-chain", { icon: '📝' });
       setShowSubmitForm(false);
       onUpdate();
     } catch (err: any) {
@@ -317,7 +317,7 @@ function MilestoneCard({
       const txHash = await invokeApproveAndRelease(milestone.contractMilestoneId);
       await api.patch(`/milestones/${milestone._id}/approve`, { releaseTxHash: txHash });
       track("payment_released", { milestoneId: milestone._id });
-      toast.success("Payment released to freelancer on-chain");
+      toast.success("Payment released to freelancer on-chain", { icon: '🎉' });
       onUpdate();
     } catch (err) {
       toast.error(apiErrorMessage(err, "Could not approve milestone"));

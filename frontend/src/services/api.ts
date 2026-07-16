@@ -29,11 +29,24 @@ api.interceptors.response.use(
 );
 
 export function apiErrorMessage(err: unknown, fallback = "Something went wrong"): string {
+  console.error("apiErrorMessage received:", err);
   if (axios.isAxiosError(err)) {
-    return err.response?.data?.error || err.message || fallback;
+    const data = err.response?.data;
+    if (data?.details && Array.isArray(data.details)) {
+      return `${data.error}: ${data.details.map((d: any) => `${d.path} - ${d.message}`).join(", ")}`;
+    }
+    return data?.error || err.message || fallback;
   }
   if (err instanceof Error) {
     return err.message || fallback;
+  }
+  if (typeof err === "string") return err;
+  if (typeof err === "object" && err !== null) {
+    try {
+      return (err as any).message || JSON.stringify(err);
+    } catch (e) {
+      return fallback;
+    }
   }
   return fallback;
 }
