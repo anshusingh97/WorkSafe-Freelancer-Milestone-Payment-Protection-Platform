@@ -100,6 +100,8 @@ Improve your product based on the collected feedback and include an Improvement 
 | 11 | Manish Verma | `GD6VUIYWZXOE522RTLLX72BJDHKKVHBPX2TBUNSFHWB5FTB56UJ3AYJ4` | More detailed tooltips explaining complex blockchain terms | Added hover tooltips explaining what each blockchain state means (e.g., Escrowed, Submitted) | [715c4e5](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/715c4e5) |
 | 12 | Kavya Nair | `GBM5DK4X2B3LRBR6MM6XR336VES57UT3BF4MMCMBLW4RUTC2HZ53EWMM` | provide a detailed FAQ section for beginners | Added an FAQ section explaining the smart contract flow on the landing page | [c8424dd](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/c8424dd) |
 | 13 | Sanjay Mehta | `GAGM4MMJNTOABVDYO24IZXZOLFSNROXPKEVGDVKFGLHGGGFFT33LHRI7` | Enable exporting reports to PDF or CSV formats | Added "Export CSV" feature to the Dashboard to download project status reports | [8712016](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/8712016) |
+| 14 | Varun Bhatia | `GASF36FNJM2IOJGPXF4HZ47DD6N3KX6N5WCLZEV4FFJNEC5ZC2JFTAIR` | Clearer display of the network fees involved | Added estimated network fee text below on-chain action buttons | [5821917](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/5821917) |
+| 15 | Simran Kaur | `GCPSXZS64N3BWY43G66XWQHWQUZTCTVOV6UJZKAJOVRAMTKHX5MWYJOD` | More visual cues or animations when a transaction succeeds | Added emoji visual cues to on-chain success toasts | [7d0e6ee](https://github.com/anshusingh97/WorkSafe-Freelancer-Milestone-Payment-Protection-Platform/commit/7d0e6ee) |
 
 ## Proof of On-chain Transactions
 
