@@ -1,14 +1,16 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { Wallet, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Wallet, ShieldCheck, CheckCircle2, Unplug } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { api, apiErrorMessage } from "../services/api";
 import { connectWallet, isFreighterInstalled, checkNetwork, shortenAddress } from "../services/freighter";
 import { track } from "../services/analytics";
+import { useWalletBalance } from "../hooks/useWalletBalance";
 
 export function Profile() {
   const { user, refreshUser } = useAuth();
   const [connecting, setConnecting] = useState(false);
+  const balance = useWalletBalance();
 
   async function handleConnect() {
     if (!(await isFreighterInstalled())) {
@@ -34,6 +36,16 @@ export function Profile() {
     }
   }
 
+  async function handleDisconnect() {
+    try {
+      await api.patch("/users/wallet", { walletAddress: "" });
+      await refreshUser();
+      toast.success("Wallet disconnected");
+    } catch (err) {
+      toast.error(apiErrorMessage(err, "Could not disconnect wallet"));
+    }
+  }
+
   return (
     <div className="mx-auto max-w-2xl px-6 py-12">
       <h1 className="font-display text-3xl font-semibold mb-8">Your profile</h1>
@@ -54,20 +66,38 @@ export function Profile() {
       </div>
 
       <div className="glass-card p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <Wallet size={18} className="text-brass-400" />
-          <h2 className="font-sans font-semibold">Stellar wallet</h2>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <Wallet size={18} className="text-brass-400" />
+            <h2 className="font-sans font-semibold">Stellar wallet</h2>
+          </div>
+          
+          {user?.walletAddress && balance !== null && (
+            <div className="text-sm font-semibold text-brass-300 bg-brass-900/30 px-3 py-1 rounded-full border border-brass-500/20">
+              {parseFloat(balance).toFixed(2)} XLM
+            </div>
+          )}
         </div>
 
         {user?.walletAddress ? (
-          <div className="flex items-center gap-3 rounded-lg border border-verdigris-500/30 bg-verdigris-500/5 px-4 py-3">
-            <CheckCircle2 size={18} className="text-verdigris-400 shrink-0" />
-            <div>
-              <p className="text-sm text-parchment/80">Connected</p>
-              <p className="font-mono text-xs text-verdigris-400">
-                {shortenAddress(user.walletAddress, 8)}
-              </p>
+          <div className="flex items-center justify-between rounded-lg border border-verdigris-500/30 bg-verdigris-500/5 px-4 py-3">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 size={18} className="text-verdigris-400 shrink-0" />
+              <div>
+                <p className="text-sm text-parchment/80">Connected</p>
+                <p className="font-mono text-xs text-verdigris-400">
+                  {shortenAddress(user.walletAddress, 8)}
+                </p>
+              </div>
             </div>
+            
+            <button 
+              onClick={handleDisconnect} 
+              className="text-xs text-rose-400 hover:text-rose-300 flex items-center gap-1 transition-colors px-2 py-1 rounded hover:bg-rose-900/20"
+            >
+              <Unplug size={14} />
+              Disconnect
+            </button>
           </div>
         ) : (
           <>

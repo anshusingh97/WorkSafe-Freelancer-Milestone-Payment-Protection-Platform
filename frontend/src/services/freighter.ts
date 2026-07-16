@@ -5,8 +5,11 @@ import {
   getNetwork,
   signTransaction as freighterSignTransaction,
 } from "@stellar/freighter-api";
+import { Horizon } from "@stellar/stellar-sdk";
 
 export const EXPECTED_NETWORK = "TESTNET";
+
+const server = new Horizon.Server("https://horizon-testnet.stellar.org");
 
 export async function isFreighterInstalled(): Promise<boolean> {
   const result = await isConnected();
@@ -57,6 +60,17 @@ export async function signTransaction(
     throw new Error(result.error);
   }
   return result.signedTxXdr;
+}
+
+export async function getNativeBalance(address: string): Promise<string> {
+  try {
+    const account = await server.loadAccount(address);
+    const nativeBalance = account.balances.find((b) => b.asset_type === "native");
+    return nativeBalance ? nativeBalance.balance : "0.0000000";
+  } catch (error) {
+    console.error("Failed to fetch balance:", error);
+    return "0.0000000";
+  }
 }
 
 export function shortenAddress(address: string, chars = 4): string {
