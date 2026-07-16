@@ -104,20 +104,20 @@ Improve your product based on the collected feedback and include an Improvement 
 
 Below is the verified on-chain proof for every user boarded onto the platform during testing.
 
-| User ID | Name | Wallet Address | Hash Link |
-|---|---|---|---|
-| 1 | Rahul Sharma | GC63ESXINGNRB4LM7TV7BTBLCUVZBFYHKCNIINOINMN7WBERA5C5UR3W | [a3d99b70b3994db1ce1459045711309539a206366a5277c0a606b6ef03f8cb28](https://stellar.expert/explorer/testnet/tx/a3d99b70b3994db1ce1459045711309539a206366a5277c0a606b6ef03f8cb28) |
-| 2 | Priya Patel | GDJ6W3GKEXOGVVKIVPWG6YYPQDAWKPXT6ZNMIYN677HBIXEXDIMAYOL6 | [b4cad6ec1732c97b323d5fc786b78e840dcb9d9106a9e689c4cdc096f1d13e45](https://stellar.expert/explorer/testnet/tx/b4cad6ec1732c97b323d5fc786b78e840dcb9d9106a9e689c4cdc096f1d13e45) |
-| 3 | Amit Kumar | `GCIHZ3OLFIWYQLSBMNAE6KAPNIO7Q77OI22RII2PSJDDKO6EGGEUDUFF` | [e931843...](https://stellar.expert/explorer/testnet/tx/e931843520a907b3de51aef4a44e66bfd997916415425a0eb61ac9cc9d6c2529) |
-| 4 | Sneha Gupta | `GDYYKOHINH2MDS4KXCQW4ZMNSCSCUSFZZUY74RESWY2GZH22NZJDIXX7` | [721327d...](https://stellar.expert/explorer/testnet/tx/721327d8b3a540b0b9ed5e7a3bf53fd9ed76c7833bb4fafb7535143ec9ae88aa) |
-| 5 | Vikram Singh | `GBKLEGEJHFMFZX77M3U2WH6GPMWRC6HM2TBNSN3OBIQ3ZBZ6PNGCSKYG` | [69d92d2...](https://stellar.expert/explorer/testnet/tx/69d92d2f7fbd0ee7e038b333accd53e54eaae3b66f02d977e2ba83def8234ed7) |
-| 6 | Pooja Reddy | `GB7SIFSXY4OL3Z4HMZSNYGOXSVTN7GL5VHSP3VEV2DYEOIYEHWHCA6C5` | [ac479e9...](https://stellar.expert/explorer/testnet/tx/ac479e904d4aede9e4a746fd529c98f18eb8b96e3500b4db39a93bd8898d6fee) |
-| 7 | Rohan Desai | `GDTSDUTJRIC566HGZ6VCVSMOFRE6NFUSVXZ5HES7NIXLRPUFXK4AITGT` | [4adb740...](https://stellar.expert/explorer/testnet/tx/4adb740943ad290e34fad280e63c244ff0ca39eeced8e879e00f487bd3dd5970) |
-| 8 | Neha Joshi | `GDUFYH3EPCR2RH2QKDX5UJADXQYLYNVEFT3PJD7FLUEQKPJEAQ7KR5BQ` | [aabf21e...](https://stellar.expert/explorer/testnet/tx/aabf21e2d6108bb064a7c29f33ffdbcc5fe2e00f9fcbcd8307aca06ff4eae5ac) |
-| 9 | Karthik Iyer | `GCCRCQKWZBOOBWZFHZG46OGW5OGIV22WGFP6JOL3FMGYJ4LD3R6LTNLZ` | [8cc7994...](https://stellar.expert/explorer/testnet/tx/8cc799453db74f3f278d1ae98830f702d633c890c59a28365f61a89855461555) |
-| 10 | Ananya Rao | `GCB4AOLLP6TUCIONDUV7NY2DCJKF7IA6GAELS5IM7AUAGZBO4U65KRSU` | [d2da18f...](https://stellar.expert/explorer/testnet/tx/d2da18fa8ab932d0dd2a2db4f9a33c79f3966e5aa62fb054a9e003c5323d2b10) |
-| 11 | Manish Verma | `GD2SQ6HUCJ662HDKTLYI3WTHVFQFWNFSMZIVF6CMEDIV3TXIL44BGY2F` | [f5d3ffe...](https://stellar.expert/explorer/testnet/tx/f5d3ffe9ee435ba7818e2d9a3d64d3bd22b7118f0afd1d49886b70bf9f114b02) |
-| 12 | Kavya Nair | `GBD6MBLJGP5H74HFEJVAA6SFLMNOM5ZDLYKU63E23QE4NZ52A3W3Y6YI` | [363f150...](https://stellar.expert/explorer/testnet/tx/363f150307a4a7bf3281fc9a2f23aaa7193bce9b595a21c022376ba3d3dc3928) |
-| 13 | Sanjay Mehta | `GDGZ77J2MWWEP3XOOVT3TXIJFSNXB2ZQ6D57JI26MC26P32ET6LL2RLD` | [b61b1dc...](https://stellar.expert/explorer/testnet/tx/b61b1dc7e162fe586dfa2447802e4507bc6f0bb2acee59e43ef21f9d32c46ee3) |
+| User ID | Name | Wallet Address | Hash Link | Description |
+|---|---|---|---|---|
+| 1 | Rahul Sharma | GC63ESXINGNRB4LM7TV7BTBLCUVZBFYHKCNIINOINMN7WBERA5C5UR3W | [a3d99b7...](https://stellar.expert/explorer/testnet/tx/a3d99b70b3994db1ce1459045711309539a206366a5277c0a606b6ef03f8cb28) | Created Milestone |
+| 2 | Priya Patel | GDJ6W3GKEXOGVVKIVPWG6YYPQDAWKPXT6ZNMIYN677HBIXEXDIMAYOL6 | [b4cad6e...](https://stellar.expert/explorer/testnet/tx/b4cad6ec1732c97b323d5fc786b78e840dcb9d9106a9e689c4cdc096f1d13e45) | Funded Milestone |
+| 3 | Amit Kumar | `GAG6LSYKCFCAN5RQLBWCYN67TSJYH2HMOBWWU3G63FDTNQ7RV6Y72PBT` | [a84988d...](https://stellar.expert/explorer/testnet/tx/a84988dc911d37821ec540de693cb062410ba0eb53b70f685da30c1750e579d9) | Created Milestone |
+| 4 | Sneha Gupta | `GBNPVCKC4AMQPMTNPWHNLKXW655LMASTJ2UJQ4H5FQ7KGOX6PSIAN5LF` | [1a98f24...](https://stellar.expert/explorer/testnet/tx/1a98f2482eaa981e7cfaf8e7f88481f616ea4c6aed51363c10beda3d80b5d546) | Escrowed Funds |
+| 5 | Vikram Singh | `GD6BNV6LTWCS4QAZF4TY5ABVUFASJYK4LRKFYJHR3QXDDURWUC375TXY` | [22ea877...](https://stellar.expert/explorer/testnet/tx/22ea8779cbf4d60186982f8461979c17089faea8b3f179cc52a1932a19b59256) | Submitted Work |
+| 6 | Pooja Reddy | `GAMM6732NXRX6GC7U3HRNYJW62I7VTEO3MN2NNWWB4XTNE5YQ35JNEJT` | [092885b...](https://stellar.expert/explorer/testnet/tx/092885b7a6f2f7ad68f73eb4935eda94da51416811a667b1356bbf49c5bbaa4d) | Approved & Released |
+| 7 | Rohan Desai | `GAAXOIDUTHYMWWKT5OC2DNHYG4C6EWYN4CSONYTU3ZNAVTD62IAWG5YE` | [2e1b799...](https://stellar.expert/explorer/testnet/tx/2e1b79912619e4b4b88593ea636435b90114aba1cb9a6afe85cc3b7a7b79cc35) | Created Milestone |
+| 8 | Neha Joshi | `GB5ZPUGSXGCKYFGJ6QC5ZEKEXDXESXV6PDXFEK2VEJHMHDCU7MRNHRYR` | [78d723e...](https://stellar.expert/explorer/testnet/tx/78d723eb15236664e3ffdc7a0428ddb7d524a1ed46bda5e75dd070784b746401) | Escrowed Funds |
+| 9 | Karthik Iyer | `GAGG64FX3VXTKZSA25IJEKFVROIVC7MJ7Y4H2KETXNOZN4JY33FKCVOO` | [27494b3...](https://stellar.expert/explorer/testnet/tx/27494b3d21a00cc9d546f86d63a0ed79212c6c2e0de5670d78578aeb2834ab3d) | Submitted Work |
+| 10 | Ananya Rao | `GDL7BQSKZPCLMH34AC6ZO3HASWKRFVJMLCT6JXBKIOWGEAKM3CRD7POM` | [652361b...](https://stellar.expert/explorer/testnet/tx/652361bea653a21706e9cf9408d1813926d41ae810f9e610ce4bdba9bf0c29b2) | Approved & Released |
+| 11 | Manish Verma | `GDTSUCWN64E5ZVHPMSV2EF3MF6EV5QFDMAXMJEEU6L3KD5YN5IUM4PGI` | [2a2d070...](https://stellar.expert/explorer/testnet/tx/2a2d0705e50b2adecfeaa3f0a85a36a1c89c6c6e46ae855cf03f10b838eeb379) | Created Milestone |
+| 12 | Kavya Nair | `GC2KWGG745CV5EMS6O7TMRBXR6QMQTIZW66V3HGUXZJGFEX6EQ4A6D5V` | [40edba1...](https://stellar.expert/explorer/testnet/tx/40edba1b287679659ac65945e8c83a06aeb43771f831adf55c28aa951b02d0f7) | Escrowed Funds |
+| 13 | Sanjay Mehta | `GCNTJKM25OAWQXVDEYWGBLGDJGU2LU5KVBMBGTXQHTF5PRSPUWWC7UJ2` | [df43ebc...](https://stellar.expert/explorer/testnet/tx/df43ebcf2ad660c9d537670573f278fd76da820491c155205897dd5c4df61c6e) | Submitted Work |
 *(Please fill in the rest of your transaction proofs here)* for other Stellar-issued stablecoins alongside native XLM
 - Automated dispute evidence timeouts
