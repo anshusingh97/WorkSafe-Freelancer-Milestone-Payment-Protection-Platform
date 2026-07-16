@@ -1,38 +1,26 @@
-// Thin wrapper around the Freighter browser extension's injected API.
-// Freighter injects `window.freighterApi` (via @stellar/freighter-api under
-// the hood in newer versions). We feature-detect rather than hard-import,
-// so the app doesn't crash for users without the extension installed.
-
-interface FreighterApi {
-  isConnected(): Promise<{ isConnected: boolean }>;
-  requestAccess(): Promise<{ address: string } | { error: string }>;
-  getAddress(): Promise<{ address: string } | { error: string }>;
-  getNetwork(): Promise<{ network: string; networkPassphrase: string }>;
-  signTransaction(
-    xdr: string,
-    opts: { networkPassphrase: string }
-  ): Promise<{ signedTxXdr: string } | { error: string }>;
-}
-
-declare global {
-  interface Window {
-    freighterApi?: FreighterApi;
-  }
-}
+import {
+  isConnected,
+  requestAccess,
+  getAddress,
+  getNetwork,
+  signTransaction as freighterSignTransaction,
+} from "@stellar/freighter-api";
 
 export const EXPECTED_NETWORK = "TESTNET";
 
-export function isFreighterInstalled(): boolean {
-  return typeof window !== "undefined" && !!window.freighterApi;
+export async function isFreighterInstalled(): Promise<boolean> {
+  const result = await isConnected();
+  return result.isConnected;
 }
 
 export async function connectWallet(): Promise<string> {
-  if (!isFreighterInstalled()) {
+  const installed = await isFreighterInstalled();
+  if (!installed) {
     throw new Error(
       "Freighter wallet not found. Install the Freighter browser extension to continue."
     );
   }
-  const result = await window.freighterApi!.requestAccess();
+  const result = await requestAccess();
   if ("error" in result) {
     throw new Error(result.error);
   }
@@ -40,17 +28,19 @@ export async function connectWallet(): Promise<string> {
 }
 
 export async function getPublicKey(): Promise<string | null> {
-  if (!isFreighterInstalled()) return null;
-  const result = await window.freighterApi!.getAddress();
+  const installed = await isFreighterInstalled();
+  if (!installed) return null;
+  const result = await getAddress();
   if ("error" in result) return null;
   return result.address || null;
 }
 
 export async function checkNetwork(): Promise<{ ok: boolean; network: string }> {
-  if (!isFreighterInstalled()) {
+  const installed = await isFreighterInstalled();
+  if (!installed) {
     throw new Error("Freighter wallet not found.");
   }
-  const { network } = await window.freighterApi!.getNetwork();
+  const { network } = await getNetwork();
   return { ok: network === EXPECTED_NETWORK, network };
 }
 
@@ -58,10 +48,11 @@ export async function signTransaction(
   xdr: string,
   networkPassphrase: string
 ): Promise<string> {
-  if (!isFreighterInstalled()) {
+  const installed = await isFreighterInstalled();
+  if (!installed) {
     throw new Error("Freighter wallet not found.");
   }
-  const result = await window.freighterApi!.signTransaction(xdr, { networkPassphrase });
+  const result = await freighterSignTransaction(xdr, { networkPassphrase });
   if ("error" in result) {
     throw new Error(result.error);
   }

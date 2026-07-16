@@ -11,7 +11,7 @@ export function Profile() {
   const [connecting, setConnecting] = useState(false);
 
   async function handleConnect() {
-    if (!isFreighterInstalled()) {
+    if (!(await isFreighterInstalled())) {
       toast.error("Install the Freighter browser extension first, then reload this page.");
       return;
     }
