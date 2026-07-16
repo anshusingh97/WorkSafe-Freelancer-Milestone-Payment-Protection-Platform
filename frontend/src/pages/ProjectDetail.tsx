@@ -46,11 +46,11 @@ export function ProjectDetail() {
     return <div className="mx-auto max-w-5xl px-6 py-12 text-parchment/50">Project not found.</div>;
   }
 
-  const client = project.clientId as User;
-  const freelancer = project.freelancerId as User | undefined;
-  const isClient = user?.id === (typeof project.clientId === "string" ? project.clientId : client?.id);
+  const client = project.clientId as any;
+  const freelancer = project.freelancerId as any;
+  const isClient = user?.id === (typeof project.clientId === "string" ? project.clientId : (client?.id || client?._id));
   const isFreelancer =
-    freelancer && user?.id === (typeof project.freelancerId === "string" ? project.freelancerId : freelancer.id);
+    freelancer && user?.id === (typeof project.freelancerId === "string" ? project.freelancerId : (freelancer?.id || freelancer?._id));
 
   async function acceptProject() {
     try {
