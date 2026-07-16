@@ -90,6 +90,27 @@ export function Landing() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-4xl px-6 py-20 border-t border-ink-700/60">
+        <h2 className="font-display text-3xl font-semibold text-center mb-10">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-6">
+          <div className="glass-card p-6">
+            <h3 className="font-sans font-semibold mb-2">What is WorkSafe?</h3>
+            <p className="text-sm text-parchment/60 leading-relaxed">WorkSafe is a decentralized milestone escrow platform built on the Stellar blockchain, designed to protect both freelancers and clients from non-payment and non-delivery.</p>
+          </div>
+          <div className="glass-card p-6">
+            <h3 className="font-sans font-semibold mb-2">How does the smart contract escrow work?</h3>
+            <p className="text-sm text-parchment/60 leading-relaxed">When a client funds a milestone, the XLM is sent directly to a secure Soroban smart contract, not a personal wallet. The funds are only released to the freelancer once the client signs an approval transaction.</p>
+          </div>
+          <div className="glass-card p-6">
+            <h3 className="font-sans font-semibold mb-2">Do I need a crypto wallet to use this?</h3>
+            <p className="text-sm text-parchment/60 leading-relaxed">Yes. You will need the Freighter browser extension wallet to sign transactions on the Stellar network. Setting it up takes less than two minutes.</p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="border-t border-ink-700/60 bg-ink-900/50">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
