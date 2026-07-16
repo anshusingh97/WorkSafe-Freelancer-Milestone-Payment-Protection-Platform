@@ -58,7 +58,7 @@ contracts/         Soroban smart contract (Rust) — the actual escrow
 
 ### Product UI
 - **Dashboard Overview**:
-  ![Dashboard Screenshot](./images/product_UI.png)
+  ![Dashboard Screenshot](./images/product_ui.png)
   
 ### Mobile Responsive Design
 - **Mobile View**: Fully responsive across all devices.
@@ -66,7 +66,7 @@ contracts/         Soroban smart contract (Rust) — the actual escrow
 
 ### Analytics Dashboard
 - **Live Telemetry & Verification**:
-  ![Analytics Dashboard](./images/monitoring_dashboard.png)
+  ![Analytics Dashboard](./images/analytics_and_monitoring.png)
 
 ## Users Onboarded
 
