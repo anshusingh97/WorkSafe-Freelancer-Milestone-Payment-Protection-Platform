@@ -7,7 +7,7 @@ import {
   Networks,
   Address,
 } from "@stellar/stellar-sdk";
-import { signTransaction, getPublicKey } from "./freighter";
+import { signTransaction, connectWallet } from "./freighter";
 
 export const CONTRACT_ID = "CAUEWAQAAARNEWO6GPEY6PUH3XVFJG47IVXY7MEAFTYLTYVVMJSUVWEZ";
 export const TOKEN_ID = "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC";
@@ -15,7 +15,8 @@ export const TOKEN_ID = "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYS
 const server = new rpc.Server("https://soroban-testnet.stellar.org");
 
 async function buildAndSubmit(method: string, args: xdr.ScVal[]): Promise<string> {
-  const pubKey = await getPublicKey();
+  // Use connectWallet to explicitly ensure Freighter is unlocked and authorized
+  const pubKey = await connectWallet();
   if (!pubKey) throw new Error("Freighter wallet not connected");
 
   // Fetch account sequence
