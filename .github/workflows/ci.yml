@@ -22,7 +22,8 @@ jobs:
       - name: Build Contracts
         run: |
           cd contracts
-          stellar contract build
+          cargo build --target wasm32-unknown-unknown --release
+          stellar contract optimize --wasm target/wasm32-unknown-unknown/release/worksafe_escrow_contract.wasm
       - name: Run Contract Tests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
