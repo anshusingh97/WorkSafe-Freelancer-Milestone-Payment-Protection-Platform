@@ -292,7 +292,8 @@ function MilestoneCard({
       toast.success("Work submitted for review on-chain");
       setShowSubmitForm(false);
       onUpdate();
-    } catch (err) {
+    } catch (err: any) {
+      alert(`DEBUG: ${err?.message || JSON.stringify(err)}`);
       toast.error(apiErrorMessage(err, "Could not submit work"));
     } finally {
       setBusy(false);
