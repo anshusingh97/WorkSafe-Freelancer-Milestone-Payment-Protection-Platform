@@ -237,9 +237,14 @@ function MilestoneForm({
         value={dueDate}
         onChange={(e) => setDueDate(e.target.value)}
       />
-      <button type="submit" disabled={loading} className="btn-primary w-full">
-        {loading ? "Adding…" : "Add milestone"}
-      </button>
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          <button type="submit" disabled={loading} className="btn-primary w-full sm:w-auto">
+            {loading ? "Adding…" : "Add milestone"}
+          </button>
+          <span className="text-xs text-parchment/60 mt-2 sm:mt-0">
+            (Estimated Network Fee: &lt;0.01 XLM)
+          </span>
+        </div>
     </form>
   );
 }
@@ -403,9 +408,12 @@ function MilestoneCard({
 
       <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-ink-700">
         {isClient && milestone.status === "created" && (
-          <button onClick={fund} disabled={busy} className="btn-primary text-sm !py-1.5">
-            <Wallet size={14} /> Fund escrow
-          </button>
+          <div className="flex flex-col gap-1 items-start">
+            <button onClick={fund} disabled={busy} className="btn-primary text-sm !py-1.5">
+              <Wallet size={14} /> Fund escrow
+            </button>
+            <span className="text-[10px] text-parchment/60">(Est. Fee: &lt;0.01 XLM)</span>
+          </div>
         )}
         {isFreelancer && milestone.status === "funded" && !showSubmitForm && (
           <button onClick={() => setShowSubmitForm(true)} className="btn-secondary text-sm !py-1.5">
@@ -413,9 +421,12 @@ function MilestoneCard({
           </button>
         )}
         {isClient && milestone.status === "submitted" && (
-          <button onClick={approve} disabled={busy} className="btn-primary text-sm !py-1.5">
-            Approve & release payment
-          </button>
+          <div className="flex flex-col gap-1 items-start">
+            <button onClick={approve} disabled={busy} className="btn-primary text-sm !py-1.5">
+              Approve & release payment
+            </button>
+            <span className="text-[10px] text-parchment/60">(Est. Fee: &lt;0.01 XLM)</span>
+          </div>
         )}
         {(isClient || isFreelancer) && ["funded", "submitted"].includes(milestone.status) && (
           <button onClick={dispute} disabled={busy} className="text-sm text-rust hover:text-rust/80">
