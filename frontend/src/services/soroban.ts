@@ -26,22 +26,20 @@ async function buildAndSubmit(method: string, args: xdr.ScVal[]): Promise<string
   const operation = contract.call(method, ...args);
 
   let tx = new TransactionBuilder(account, {
-    fee: "1000", // baseline fee, simulated will update it
+    fee: "1000", // baseline fee, prepareTransaction will update it
     networkPassphrase: Networks.TESTNET,
   })
     .addOperation(operation)
     .setTimeout(30)
     .build();
 
-  // Simulate to populate footprint and exact fee
-  const simulated = await server.simulateTransaction(tx);
-  if (rpc.Api.isSimulationError(simulated)) {
-    console.error("Simulation failed:", simulated);
-    throw new Error(simulated.error || "Simulation failed");
+  // Prepare transaction (simulates, adds footprint, exact fee, and auth)
+  try {
+    tx = await server.prepareTransaction(tx);
+  } catch (err: any) {
+    console.error("Simulation/Prepare failed:", err);
+    throw new Error(`Simulation failed: ${err.message || "Unknown error"}`);
   }
-
-  // Assemble the final tx with footprint
-  tx = rpc.assembleTransaction(tx, simulated as rpc.Api.SimulateTransactionSuccessResponse).build();
 
   // Sign with Freighter
   const signedXdr = await signTransaction(tx.toXDR(), Networks.TESTNET);
